@@ -1,7 +1,25 @@
 import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App() {
+
+  
+  useEffect(() => {
+    // llamada api
+    const getCall = async () => {
+      return await axios.get('/user?ID=12345');
+    }
+    try {
+      getCall();
+    } catch(e) {
+      console.log(e);
+    }
+    
+    
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
